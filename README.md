@@ -35,7 +35,7 @@ may include the following properties.
 
 ### className
 
-The class name that Enable Buttons uses to locate links.
+The class name that Enable Buttons uses to locate sections.
 Defaults to `js-enable-buttons`.
 
 ```js
@@ -46,9 +46,9 @@ enableButtons({ className: 'my-special-class' })
 
 ### ignore
 
-If there is a button within the container that you don't
-want Enable Buttons to do it's magic on, then you can add
-the `data-ignore` attribute to it.
+If there is a button that you don't want Enable Buttons to
+do it's magic on, then you can add the `data-ignore`
+attribute to it.
 
 ```html
 <form class="js-enable-buttons">
