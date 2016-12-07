@@ -34,7 +34,18 @@ const init = ({ className = 'js-enable-buttons' } = {}) => {
     const inputs = [ ...el.querySelectorAll('input[required]') ]
     const update = () => updateState({ buttons, inputs })
 
-    inputs.map(input => input.addEventListener('change', update))
+    inputs.map(input => {
+      input.addEventListener('change', update)
+
+      if ([ 'email', 'text' ].indexOf(input.type) !== -1) {
+        let debounce
+
+        input.addEventListener('keyup', () => {
+          clearTimeout(debounce)
+          debounce = setTimeout(update, 300)
+        })
+      }
+    })
 
     update()
   })
